@@ -4,7 +4,7 @@ on:  workflow_dispatch
 
 defaults:
  run:
-  working-directory: ./app
+  working-directory: ./First
 jobs:
   build:
     runs-on: ubuntu-latest
