@@ -2,15 +2,16 @@ name: 'C++ CI'
 
 on:  workflow_dispatch
 
+defaults:
+ run:
+  working-directory: ./app
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true          
-      - name: Build First
-        working-directory: ./First
+          submodules: true
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
