@@ -8,8 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true
-      - run: cd First
+          submodules: true          
+      - name: Build First
+        working-directory: ./First
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
