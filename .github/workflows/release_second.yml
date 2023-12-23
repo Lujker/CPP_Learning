@@ -1,10 +1,10 @@
-name: 'C++ CI First'
+name: 'C++ CI Second'
 
 on:  workflow_dispatch
 
 defaults:
  run:
-  working-directory: ./First
+  working-directory: ./Second
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,8 +23,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: ${{ github.run_number }} First
-          release_name: Release ${{ github.run_number }} First
+          tag_name: ${{ github.run_number }} Second
+          release_name: Release ${{ github.run_number }} Second
           draft: false
           prerelease: false
       - name: Upload Release Asset
@@ -34,6 +34,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./First/helloworld-0.0.${{ github.run_number }}-Linux.deb
-          asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
+          asset_path: ./Second/ip_filter-0.0.${{ github.run_number }}-Linux.deb
+          asset_name: ip_filter-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package

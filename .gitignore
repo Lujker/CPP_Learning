@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 /First/build
 /First/CMakeUserPresets.json
+/Second/build
+/Second/CMakeUserPresets.json
