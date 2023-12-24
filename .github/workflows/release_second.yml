@@ -23,8 +23,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: ${{ github.run_number }} Second
-          release_name: Release ${{ github.run_number }} Second
+          tag_name: Second_${{ github.run_number }}
+          release_name: Release_Second ${{ github.run_number }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
