@@ -377,13 +377,13 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-.vscode/*
+*/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
-
+*/CMakeUserPresets.json
 # Local History for Visual Studio Code
 .history/
 
@@ -396,7 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Custom subproj dirs
 /First/build
-/First/CMakeUserPresets.json
 /Second/build
-/Second/CMakeUserPresets.json
+/Third/build
