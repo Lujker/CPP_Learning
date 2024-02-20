@@ -94,17 +94,7 @@ bool operator!=(const Allocator<T, AllocationStrategy>& lhs, const Allocator<U, 
 }
 
 namespace MemoryUtils {
-	std::size_t getAlignmentPadding(std::size_t not_aligned_address, std::size_t alignment)
-	{
-		if ((alignment != 0u) && (not_aligned_address % alignment != 0u))
-		{
-			const std::size_t multiplier = (not_aligned_address / alignment) + 1u;
-			const std::size_t aligned_address = multiplier * alignment;
-			return aligned_address - not_aligned_address;
-		}
-
-		return 0u;
-	}
+	std::size_t getAlignmentPadding(std::size_t not_aligned_address, std::size_t alignment);
 
 	// Current chunk implementation works only with size
 	// aligned by 4 bytes, because HEADER_SIZE now also 4 bytes.
